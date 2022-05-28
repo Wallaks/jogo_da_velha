@@ -9,7 +9,7 @@ public class application {
         while (bonitao) {
             System.out.println("Wallaks bonitao" + good);
             good = good + 1;
-            // banana de pijama
+            // banana de pijama- 
         }
     }
 }
