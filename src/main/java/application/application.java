@@ -1,15 +1,16 @@
 package application;
 
-import controller.tabuleiro;
-
 import java.util.Scanner;
 
 public class application {
 
     public static void main(String[] args) throws InterruptedException {
 
+        int tam = 3;
+        tabuleiro tab = new tabuleiro();
+        String matriz[][] = tab.popula();
         Boolean sair = true;
-        do{
+        do {
             int x = 0;
             int y = 0;
             Scanner ler = new Scanner(System.in);
@@ -23,10 +24,14 @@ public class application {
 
             //(metodo para verificar se a linha e valida)
 
-            tabuleiro.popula();
-            tabuleiro.insere(x, y);
 
-        }while(sair);
-        }
+            tab.insere(x, y, matriz);
+            tab.formata(matriz);
+            System.out.print("\n");
+
+
+        } while (sair);
+
     }
+}
 

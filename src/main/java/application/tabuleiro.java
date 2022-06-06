@@ -1,8 +1,13 @@
-package controller;
+package application;
 
 public class tabuleiro {
 
-    public static void popula() {
+    int x;
+    int y;
+    int tam = 3;
+
+
+    public String[][] popula() {
         int tam = 3;
         String matriz[][] = new String[tam][tam];
         //Laço responsável por preencher a matriz com números quaisquer
@@ -10,21 +15,29 @@ public class tabuleiro {
             for (int coluna = 0; coluna < matriz[linha].length; coluna++) {
                 //Gera um numero qualquer para a matriz
                 matriz[linha][coluna] = ".";
-                System.out.print(matriz[linha][coluna] + " "); //imprime caracter a caracter
+
             }
         }
-
-        System.out.print("\n" + "Situacao atual do tabuleiro" + "\n");
+        return matriz;
     }
 
-    public static void insere(int x, int y) {
-        int tam = 3;
-        String matriz[][] = new String[tam][tam];
+    void insere(int x, int y, String matriz[][]) {
         matriz[x][y] = "x";
-        System.out.print("\n" + "Situacao atual do tabuleiro" + "\n");
         for (int linha = 0; linha < matriz.length; linha++) {
             for (int coluna = 0; coluna < matriz[linha].length; coluna++) {
-                System.out.print(matriz[linha][coluna] + " "); //imprime caracter a caracter
+            }
+        }
+    }
+
+    void formata(String matriz[][]) {
+        int count = 0;
+        for (int linha = 0; linha < matriz.length; linha++) {
+            count = count + 1;
+            if (count != 0) {
+                System.out.print("\n");
+                for (int coluna = 0; coluna < matriz[linha].length; coluna++) {
+                    System.out.print(matriz[linha][coluna] + " "); //imprime caracter a caracter
+                }
             }
         }
     }
