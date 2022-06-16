@@ -12,6 +12,7 @@ public class Application {
         String matriz[][] = tab.popula();
         Boolean sair = true;
         Boolean verifica = true;
+
         int jogador = 0;
         do {
             System.out.println("Voce sera o jogador numero 1 ou 2?");
